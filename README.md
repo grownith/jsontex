@@ -112,9 +112,10 @@ Domain specific language for querying, processing, and transforming JSON data to
     - Object will be tested for deep equality with unordered member comparison
 - inequality : `>` / `>=` / `<` / `<=`
   - `expression` (`==` | `!=`) `expression`
-    - Test equality for the same json type
-    - Array will be tested for deep equality with ordered member comparison
-    - Object will be tested for deep equality with unordered member comparison
+    - Test inequality for the same json type
+      - `null` < `boolean` < `number` < `string` < `array` < `object`
+      - Array will be compare size, then deep compare each item
+      - Object will be deep compare only on matched key, then compare size if equal
 - ternary : `?` `:`
   - `condition expression` ? `true expression` : `false expression`
     - Test for boolean condition. Then evaluate matched expression. null if condition is not evaluated as boolean
