@@ -80,6 +80,8 @@ Domain specific language for querying, processing, and transforming JSON data to
     - Math division operation
   - `collection` / `collection`
     - return array of array of zip by value
+- modulo : `%`
+  - `number` % `number`
 - AND : `&&`
   - `left expression` && `right expression`
     - Return right expression if left expression pass boolean test, else return left expression
@@ -122,6 +124,17 @@ Domain specific language for querying, processing, and transforming JSON data to
 - map : `.`
   - `expression.expression`
     - Test for boolean condition. Then evaluate matched expression. null if condition is not evaluated as boolean
+- filter : `[?]`
+  - `expression[?condition]`
+    - Test for boolean condition. Filtering item out of array
+- wildcard : `*`
+  - `expression.*`
+- power : `^`
+  - `number` ^ `number`
+  - ^`expression`
+- sequence : `(;)`
+  - `($_identifier_ = expresion;$_identifier_ = expresion;...expression)`
+    - bind value to variable in this scope, then evaluate next expression until last expression to return
 - pipe : `|>`
   - Declare that the left side will be evaluate as json to be used as an input of the right side
 
