@@ -123,7 +123,7 @@ Domain specific language for querying, processing, and transforming JSON data to
     - Test for boolean condition. Then evaluate matched expression. null if condition is not evaluated as boolean
 - map : `.`
   - `expression.expression`
-    - Test for boolean condition. Then evaluate matched expression. null if condition is not evaluated as boolean
+    - Return value by evaluation
 - filter : `[?]`
   - `expression[?condition]`
     - Test for boolean condition. Filtering item out of array
